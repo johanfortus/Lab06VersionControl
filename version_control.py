@@ -5,6 +5,7 @@ Date: 3/19/24
 Description: Lab 06 - Version Control
 """
 
+
 # Main Function
 def main():
     user_input = None
@@ -25,8 +26,9 @@ def main():
             print()
 
         if user_input == '2':
-            # print(f"The encoded password is {encoded_password}, and the original password is {}")
-            # print()
+            print(
+                f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}")
+            print()
             pass
 
 
@@ -39,6 +41,13 @@ def encode(password):
             digit = str(digit)[1:]
         encoded_password += str(digit)
     return encoded_password
+
+
+def decode(encoded_password):
+    password = ""
+    for number in encoded_password:
+        password = password + str(int(number) - 3)
+    return password
 
 
 if __name__ == "__main__":
