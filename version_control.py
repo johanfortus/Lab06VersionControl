@@ -46,7 +46,7 @@ def encode(password):
 def decode(encoded_password):
     password = ""
     for number in encoded_password:
-        password = password + str(int(number) - 3)
+        password += str(int(number) + 7)[-1]
     return password
 
 
